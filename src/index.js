@@ -6,14 +6,20 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {UserProvider} from './contexts/user.context.jsx'
+import {ProductsProvider} from './contexts/products.context.jsx'
+import {CartProvider} from './contexts/cart.context.jsx'
 
 ReactDOM.render(
   <React.StrictMode>
-  <BrowserRouter>
-  <UserProvider>
-    <App />  
-  </UserProvider>
-  </BrowserRouter>
+    <BrowserRouter>
+      <UserProvider>
+        <ProductsProvider>
+          <CartProvider>
+            <App />            
+          </CartProvider>
+        </ProductsProvider>
+      </UserProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
