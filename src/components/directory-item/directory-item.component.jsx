@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { DirectoryContainer, BackgroundImage, Body } from "./directory-item.styles"
 
 const CatergoryItem = ({category}) => {
@@ -7,7 +8,7 @@ const CatergoryItem = ({category}) => {
         <BackgroundImage imageUrl={imageUrl}/>
         <Body>
         <h2>{title}</h2>
-        <p>Shop Now</p>
+        <Link to={`shop/${title}`}>Shop Now</Link>
         </Body>
         </DirectoryContainer>
     )
